@@ -76,6 +76,14 @@ document.onkeydown = function (e) {
   if (!car) return;
   
   // TODO
+  switch (e.key) {
+    case 'ArrowRight':
+      car.moveRight();
+      break;
+    case 'ArrowLeft':
+      car.moveLeft();
+      break;
+  }
 }
 
 let raf;
