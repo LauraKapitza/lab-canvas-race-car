@@ -43,37 +43,38 @@ function draw() {
   ctx.moveTo(500, 50);
   ctx.lineTo(500, H);
   ctx.stroke();
-
+  
   ctx.closePath();
   //
   // Iteration 2: car drawing
-  //
-
+  car.draw();
+  
+  
   // TODO
-
+  
   //
   // Iteration #4: obstacles
   //
-
+  
   // TODO
-
+  
   //
   // Iteration #5: collisions
   //
-
+  
   // TODO
-
+  
   //
   // Iteration #6: points
   //
-
+  
   // TODO
-
+  
 }
 
 document.onkeydown = function (e) {
   if (!car) return;
-
+  
   // TODO
 }
 
@@ -81,9 +82,9 @@ let raf;
 let frames = 0;
 function animLoop() {
   frames++;
-
+  
   draw();
-
+  
   if (!gameover) {
     raf = requestAnimationFrame(animLoop);
   }
@@ -93,8 +94,10 @@ function startGame() {
   if (raf) {
     cancelAnimationFrame(raf);
   }
-
+  
   // TODO
+  car = new Car();
+
 
   animLoop();
 }
