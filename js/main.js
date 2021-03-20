@@ -8,12 +8,43 @@ const W = ctx.canvas.width;
 const H = ctx.canvas.height;
 
 function draw() {
-  //
   // Iteration 1: road drawing
-  //
+  
+  //grass lines
+  ctx.fillStyle = 'green'; 
+  ctx.fillRect(0, 0, 50, H);
+  ctx.save()
 
-  // TODO
+  ctx.fillStyle = 'green'; 
+  ctx.fillRect(W-50, 0, 50, H);
+  ctx.save()
 
+  // grey borders
+  ctx.fillStyle = 'grey';
+  ctx.fillRect(50, 0, 25, H);
+  ctx.save()
+
+  ctx.fillStyle = 'grey';
+  ctx.fillRect(W-75, 0, 25, H);
+  ctx.save()
+
+  //grey street
+  ctx.fillStyle = 'grey';
+  ctx.fillRect(100, 0, W - 200, H);
+  ctx.save()
+
+  // white lanes 
+  ctx.strokeStyle = 'white';
+  ctx.lineWidth = 10;
+  ctx.setLineDash([50, 100]);
+  
+  ctx.beginPath();
+  
+  ctx.moveTo(500, 50);
+  ctx.lineTo(500, H);
+  ctx.stroke();
+
+  ctx.closePath();
   //
   // Iteration 2: car drawing
   //
